@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#INICIO" class="menu-link">INICIO</a>
+            </li>
+            <li>
+                <a href="#SOBRE" class="menu-link">SOBRE</a>
+            </li>
+            <li>
+                <a href="#PROJETOS" class="menu-link">PROJETOS</a>
+            </li>
+            <li>
+                <a href="#CONTATOS" class="menu-link">CONTATOS</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="inicio" id="INICIO">
+        <img src="./img/foto_capa.jpg" alt="imagem de capa" class="perfil">
+        <h1>Guilherme Aires</h1>
+        <p class="cabecalho-sub-titulo">DESENVOLVEDOR FRONT - END</p>
+    </div>
+
+    <section id="SOBRE" class="Sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Sou um desenvolvedor front-end em início de carreira, com foco no aprendizado e no aprimoramento
+                contínuo. Atualmente, estudo HTML, CSS e JavaScript, desenvolvendo pequenos projetos para ganhar
+                experiência prática e fortalecer minhas habilidades.
+            </p>
+        </div>
+    </section>
+    <section id="PROJETOS" class="projetos">
+        <h2 class="Projetos-titulo">Meus Projetos</h2>
+        <div class="Projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/foto_insta.jpeg" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Projeto de faculdade</h3>
+                    <p class="paragrafo-projetos">Projeto em HTML, CSS e JavaScript para recriar a interface do
+                        Instagram,
+                        com foco em responsividade e interatividade.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/foto_itec.png" alt="projeto2" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Plataforma ITEC</h3>
+                    <p class="paragrafo-projetos">Empresa júnior de tecnologia focada em transformar ideias em soluções
+                        inovadoras, impulsionando o sucesso dos clientes com excelência em desenvolvimento e
+                        consultoria.
+                    </p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/foto_port.jpeg" alt="projeto3" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Portifólios</h3>
+                    <p class="paragrafo-projetos">
+                        Criação de sites modernos, responsivos e funcionais.
+                        Freelancers e também desenvolvo trabalhos autorais para portfólio, sempre
+                        buscando aprimorar minhas habilidades e entregar boas experiências digitais.</p>
+                </div>
+            </div>
+
+    </section>
+
+    <section id="CONTATOS" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhatsapp(event)">
+            <div class="Nome-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+
+    </section>
+
+    <script>
+
+        function enviarWhatsapp(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5581994331136'
+
+            const texto = `Olá! me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+            console.log(url);
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
